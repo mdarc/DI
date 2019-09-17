@@ -1,0 +1,33 @@
+{
+  "name": "mdarc/di",
+  "description": "A simple yet powerful PSR-11 autowiring dependency injection container",
+  "type": "library",
+  "keywords": ["container", "di", "dependency injection", "ioc", "psr-11", "psr11", "autowiring"],
+  "prefer-stable": true,
+  "license": "MIT",
+  "homepage": "https://github.com/mdarc/DI",
+  "authors": [
+    {"name": "Mariano Darc", "email": "espolete@gmail.com"}
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "psr/container": "^1.0",
+    "ext-reflection": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.5.16",
+    "jbzoo/profiler": "^1.0.5",
+    "pimple/pimple":"^3.2.0",
+    "php-di/php-di": "^6.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mdarc\\DI\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mdarc\\DI\\Test\\UnitTest\\": "tests/UnitTest/"
+    }
+  }
+}
