@@ -1,5 +1,5 @@
 # mdarc/DI
-A simple yet powerful PSR-11 autowiring dependency injection container.
+A simple yet powerful [PSR-11](https://www.php-fig.org/psr/psr-11/) autowiring dependency injection container.
 
 **mdarc/DI** was conceived to be simple to configure and use. It was built
 for performance. (check [benchmarks](tests/Benchmarks/README.md))
