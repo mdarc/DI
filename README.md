@@ -24,7 +24,7 @@ Installation
 Before anything else, use this to add it to your composer.json
 
 ```shell script
-$ composer require mdarc/di "^1.0"
+$ composer require mdarc/di "^1.0.0"
 ```
 
 Usage
