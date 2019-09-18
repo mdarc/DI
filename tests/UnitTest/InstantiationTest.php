@@ -59,6 +59,16 @@ class InstantiationTest extends TestCase
         $this->assertInstanceOf(Baz::class, $baz);
     }
 
+    public function test_ArrayConfig()
+    {
+        $container = new Container([
+            'a_pepe' => ['pepe'],
+        ]);
+
+        $pepe = $container->get('a_pepe');
+        $this->assertIsArray($pepe);
+    }
+
     public function test_Has()
     {
         $container = new Container();

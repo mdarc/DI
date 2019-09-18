@@ -94,6 +94,11 @@ class Container implements ContainerInterface
                 return $this->get($this->definitions[$id]);
             }
 
+            // is it an array with configurations?
+            if (is_array($this->definitions[$id])) {
+                return $this->definitions[$id];
+            }
+
             // is this a factory? then it should return a new object always
             if ($this->definitions[$id] instanceof Factory) {
                 if (!isset($this->circularReferenceMap[$id])) {
