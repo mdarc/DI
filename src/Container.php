@@ -118,6 +118,11 @@ class Container implements ContainerInterface
             return $this->definitions[$id]($this);
         }
 
+        // If I am being requested I return myself
+        if ($id == Container::class || $id == ContainerInterface::class) {
+            return $this;
+        }
+
         // let's build it using reflection
         $reflectionClass = new ReflectionClass($id);
         $constructor = $reflectionClass->getConstructor();
