@@ -83,4 +83,19 @@ class InstantiationTest extends TestCase
         $baz = $container->get(Baz::class);
         $this->assertInstanceOf(Baz::class, $baz);
     }
+
+    public function test_Set_with_callable()
+    {
+        $container = new Container([
+            'text' => function() { return 'hello'; }
+        ]);
+        $container->set(Baz::class, function(\Psr\Container\ContainerInterface $c) {
+            $text = $c->get('text');
+            $this->assertEquals('hello', $text);
+            return new Baz();
+        });
+
+        $baz = $container->get(Baz::class);
+        $this->assertInstanceOf(Baz::class, $baz);
+    }
 }
